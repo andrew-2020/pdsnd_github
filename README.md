@@ -6,6 +6,7 @@ Bike Share
 
 ### Description
 This is a program that show you a bike sharing data in us
+you can select the city and time so that the program can provide you with some interesting information
 ### Files used
 bikeshare.py
 and some csv data files
