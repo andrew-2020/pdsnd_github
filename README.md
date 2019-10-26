@@ -1,15 +1,14 @@
 ### Date created
-Include the date you created this project and README file.
+data of bike share companies in us
 
 ### Project Title
-Replace the Project Title
+Bike Share
 
 ### Description
-Describe what your project is about and what it does
-
+This is a program that show you a bike sharing data in us
 ### Files used
-Include the files used
+bikeshare.py
+and some csv data files
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+[GitHub] (https://github.com/andrew-2020/pdsnd_github.git)
