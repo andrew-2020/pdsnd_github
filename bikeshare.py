@@ -53,12 +53,12 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    
+
     df = pd.read_csv(CITY_DATA[city])
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     all_months = ['january' , 'february' , 'march' , 'april' , 'may' , 'june' , 'july' , 'august' , 'september' , 'october' , 'november' , 'december']
-    
+
     df['day'] = df['Start Time'].dt.weekday_name
     if month != 'all' :
         month = all_months.index(month) + 1
@@ -66,7 +66,7 @@ def load_data(city, month, day):
     if day != 'all' :
         df = df[df['day'] == day.title()]
     print_raw_data = input(' Do you want to see the first 5 lines in your filtered raw data ? (y/n): ').lower()
-    if print_raw_data  in ['y' , 'yes'] : 
+    if print_raw_data  in ['y' , 'yes'] :
         print(df.head())
         input('Type any letter to continue :  ')
     return df
@@ -106,7 +106,7 @@ def station_stats(df):
     freq = df.groupby(['Start Station' , 'End Station']).size().nlargest(1).reset_index(name = 'No_of_times')
     #print(freq)
     print('The  most  common combination is  \n \n {}'.format(freq))
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -158,7 +158,7 @@ def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
-        
+
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
@@ -166,6 +166,7 @@ def main():
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
+            print ("Thanks for Using This app!")
             break
 
 
